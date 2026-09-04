@@ -95,19 +95,21 @@ export default function ProjectModal({ project, onClose }) {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs border border-slate-700 hover:border-python-blue transition-all"
               >
-                <Github className="w-4 h-4" />
-                <span>View Source Code</span>
+                <Github className="w-4 h-4 text-python-yellow" />
+                <span>View GitHub Repository</span>
               </a>
 
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-python-blue to-sky-600 hover:from-sky-500 hover:to-blue-600 text-white font-semibold text-xs shadow-md transition-all"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span>Live Repository / Demo</span>
-              </a>
+              {project.hasLiveDemo && project.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-bold text-xs shadow-md shadow-emerald-500/20 transition-all"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span>Live Demo</span>
+                </a>
+              )}
             </div>
 
           </div>
